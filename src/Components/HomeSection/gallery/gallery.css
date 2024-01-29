@@ -1,0 +1,15 @@
+.collection img {
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
+
+.collection img:hover {
+  filter: grayscale(0);
+}
+
+/* Responzivnost za mobilne uređaje */
+@media screen and (max-width: 768px) {
+  .collection img {
+      filter: grayscale(0); /* Dodaj ovo pravilo kako bi se slike prikazivale u boji na mobilnim uređajima */
+  }
+}

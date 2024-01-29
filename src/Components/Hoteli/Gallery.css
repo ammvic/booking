@@ -1,0 +1,228 @@
+.gallery {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .items {
+  position: relative;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.gallery h3 {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.gallery .img {
+  position:relative ;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  font-size: 40px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery .img::before,
+.gallery .img::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery .img::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.gallery .img::after {
+  top: 10px;
+  left: 10px;
+  border: 2px solid #31b675;
+  opacity: 0;
+}
+
+.gallery .items:hover img {
+  transform: scale(1.1);
+}
+
+.gallery .items:hover i,
+.gallery .items:hover .img::after,
+.gallery .items:hover .img::before {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.popup {
+  margin-top: 30px;
+  width: 80%; 
+  max-width: 1000px; 
+  height: 85%; 
+  max-height: 800px; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 5px solid #31b675; 
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px; 
+}
+
+.hide {
+  display: none;
+}
+
+.popup-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup-content button {
+  background-color: #31b675;
+  color: #fff;
+  border: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content textarea {
+  width: 100%;
+  border: 2px solid #31b675;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.popup-content button {
+  background-color: #31b675;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #1e9949;
+}
+
+
+.popup-content img {
+  width: 80%;
+  max-height: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Style for the star rating */
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating span {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 5px;
+  color: #31b675;
+}
+
+.rating span:hover,
+.rating span.active {
+  color: #f8ce0b;
+}
+
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 90%;
+    max-width: 100%;
+    height: 80%;
+    max-height: 80%;
+  }
+
+  .popup-content {
+    padding: 30px;
+  }
+
+  .popup-content img {
+    width: 100%;
+    max-height: 100%;
+    margin-right: 0;
+  }
+}
+
+.update-success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Dodajte ove stilove za responzivnost galerije i popup prozora */
+@media screen and (max-width: 768px) {
+  .gallery .items {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 100%;
+    height: 80%;
+    max-height: 80%;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+
+  .popup-content img {
+    width: 100%;
+    max-height: 100%;
+    margin-right: 0;
+  }
+
+  .popup-content button {
+    margin-top: 10px;
+  }
+}
